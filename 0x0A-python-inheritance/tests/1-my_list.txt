@@ -1,0 +1,17 @@
+>>> MyList = __import__("1-my_list").MyList
+>>> l1 = MyList()
+>>> l1.append(2)
+>>> l1.append(1)
+>>> l1.print_sorted()
+[1, 2]
+>>> l1
+[2, 1]
+>>> l1.append('a')
+>>> try:
+...     l1.print_sorted()
+... except Exception as e:
+...     print(e)
+'<' not supported between instances of 'str' and 'int'
+>>> l1 = MyList([1, 2])
+>>> l1
+[1, 2]
