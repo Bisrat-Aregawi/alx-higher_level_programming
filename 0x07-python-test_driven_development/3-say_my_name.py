@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines 'say_my_name function.'"""
+"""Defines 'say_my_name function."""
 
 
 def say_my_name(first_name, last_name=""):
@@ -11,6 +11,10 @@ def say_my_name(first_name, last_name=""):
 
     Returns:
         None
+
+    Raises:
+        TypeError: in conditions of either first_name or last_name name are not
+                    a string (is raised if both are not a string aswell).
     """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")

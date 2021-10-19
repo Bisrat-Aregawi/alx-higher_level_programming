@@ -1,0 +1,45 @@
+The ``5-text_indentation.txt`` module
+=====================================
+
+Using ``text_indentation``
+------------------------
+
+This is a test file for the function ``text_indentation``.
+Import it from ``5-text_indentation.py`` module:
+
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+# Test 1: - Normal operation
+>>> text_indentation("""Hello World? How are you today?""")
+Hello World?
+<BLANKLINE>
+How are you today?
+<BLANKLINE>
+
+# Test 2: - Many spaces after punctuation.
+>>> text_indentation("""Hello World?    How are you today?""")
+Hello World?
+<BLANKLINE>
+How are you today?
+<BLANKLINE>
+
+# Test 3: - Text is not a string
+>>> text_indentation(2)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# Test 4: - Text with only punctuation
+>>> text_indentation(""".?:""")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+# Test 5: - Missing argument 'text'
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'

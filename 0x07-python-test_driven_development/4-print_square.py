@@ -10,6 +10,10 @@ def print_square(size):
 
     Returns:
         None
+
+    Raises:
+        TypeError: if size is not a positive integer
+        ValueError: if size is less than zero
     """
     if isinstance(size, int):
         if size < 0:
