@@ -1,0 +1,124 @@
+The ``100-matrix_mul.txt`` module
+=====================================
+
+Using ``matrix_mul``
+------------------------
+
+Function prototype (signature)
+------------------------------
+def matrix_mul(m_a, m_b)
+------------------------------
+
+This is a test file for the function ``matrix_mul``.
+Import it from ``100-matrix_mul.py`` module:
+
+>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+-------------------------------------------------------------------------------
+# Test_Case 1: - """each argument is a list"""
+
+>>> matrix_mul("not list", [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list
+
+--------------------------------------------
+>>> matrix_mul([[1, 2], [3, 4]], "not list")
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list
+
+--------------------------------------------------------------------------------
+# Test_Case 2: - """each argument is a list of lists"""
+
+>>> matrix_mul([1, 2], [[3, 4], [5, 6]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list of lists
+
+----------------------------------------
+>>> matrix_mul([[1, 2], [3, 4]], [5, 6])
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list of lists
+
+--------------------------------------------------------------------------------
+# Test_Case 3: - """each argument can not be empty or contain one empty list"""
+
+>>> matrix_mul([], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty
+
+---------------------------------------
+>>> matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+    ...
+ValueError: m_b can't be empty
+
+---------------------------------------
+>>> matrix_mul([[]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty
+
+---------------------------------------
+>>> matrix_mul([[1, 2], [3, 4]], [[]])
+Traceback (most recent call last):
+    ...
+ValueError: m_b can't be empty
+
+--------------------------------------------------------------------------------
+# Test_Case 4: - """Elements of each matrix must be either integers or floats"""
+
+>>> matrix_mul([['a', 2], [3, 4]], [[5, 6], [7, 8]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a should contain only integers or floats
+
+-----------------------------------------------------
+>>> matrix_mul([[1, 2], [3, 4]], [['e', 6], [7, 8]])
+Traceback (most recent call last):
+    ...
+TypeError: m_b should contain only integers or floats
+
+--------------------------------------------------------------------------------
+# Test_Case 5: - """All rows should be of the same size for `m_a` & `m_b`"""
+
+>>> matrix_mul([[1], [2, 3]], [[4, 5], [6, 7]])
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_a must be of the same size
+
+---------------------------------------------------
+>>> matrix_mul([[1, 2], [3, 4]], [[5], [6, 7]])
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_b must be of the same size
+
+--------------------------------------------------------------------------------
+# Test_Case 6: - """If `m_a` & `m_b` can't be multiplied raise ValueError"""
+
+>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a and m_b can't be multiplied
+
+--------------------------------------------------------------------------------
+# Test_Case 7: - """If an argument is missing"""
+
+>>> matrix_mul([[1,2], [3, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+--------------------------------------------------------------------------------
+# Test_Case 8: - """If arguments are missing"""
+
+>>> matrix_mul()
+Traceback (most recent call last):
+    ...
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+--------------------------------------------------------------------------------
+**********************END OF TEST FILE `100-matrix_mul.txt`*********************
