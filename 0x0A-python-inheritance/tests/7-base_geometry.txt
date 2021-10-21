@@ -1,0 +1,123 @@
+The ``7-base_geometry`` module
+==============================
+
+Using ``BaseGeometry``
+----------------------
+
+Class name (identifier)
+-----------------------
+BaseGeometry
+-----------------------
+
+This is a test file for the class ``BaseGeometry``.
+Import it from ``7-base_geometry.py`` module:
+
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Create a dummy object for testing purposes
+>>> bg = BaseGeometry()
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 1: - """`integer_validator` returns None during regular operations"""
+
+>>> bg.integer_validator("width", 10)
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 2: - """`integer_validator` raises TypeError when value is not a number"""
+
+>>> bg.integer_validator("width", "10")
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 2: - """`integer_validator` raises ValueError if value is <= 0"""
+
+>>> bg.integer_validator("width", -10)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 3: - """`area` raises an exception"""
+
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 4: - """`integer_validator` raises TypeError if value is None"""
+
+>>> bg.integer_validator("width", None)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 5: - """`integer_validator` raises TypeError if value is a list"""
+
+>>> bg.integer_validator("width", [1, 2])
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 6: - """`integer_validator` raises TypeError if value is a set"""
+
+>>> bg.integer_validator("width", {1, 2})
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 7: - """`integer_validator` raises TypeError if value is a tuple"""
+
+>>> bg.integer_validator("width", (1, 2))
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 8: - """`integer_validator` raises TypeError if value is a dictionary"""
+
+>>> bg.integer_validator("width", {'x': 1, 'y': 2})
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 9: - """`integer_validator` raises TypeError if value is a boolean"""
+
+>>> bg.integer_validator("width", True)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+------------------------------------------------------------------------------------------
+
+# TEST_CASE 10: - """`integer_validator` raises ValueError if value is zero"""
+
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 11: - """`integer_validator` has only name argument passed to it"""
+
+>>> bg.integer_validator("width")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+------------------------------------------------------------------------------------------
+# TEST_CASE 12: - """`integer_validator` has no argument passed to it"""
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+------------------------------------------------------------------------------------------
+**************************END OF TEST FILE `7-base_geometry.txt`**************************
