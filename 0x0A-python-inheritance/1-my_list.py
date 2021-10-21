@@ -14,7 +14,7 @@ class MyList(list):
         Returns:
             None
         """
-        list = self[:]
-        list.sort()
-        print(list)
+        local_list = self[:]
+        local_list.sort()
+        print(local_list)
         return None

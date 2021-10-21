@@ -15,3 +15,6 @@
 >>> l1 = MyList([1, 2])
 >>> l1
 [1, 2]
+>>> l1 = MyList([])
+>>> l1.print_sorted()
+[]
