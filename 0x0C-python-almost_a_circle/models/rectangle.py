@@ -4,7 +4,11 @@ from models import base
 
 
 class Rectangle(base.Base):
-    """Inherits from superclass 'Base'."""
+    """Iniializes rectangle objects with attributes.
+
+    It defines mandatory width & height and optional x & y coordinates upon
+    object creation and defines instance methods to get and set them
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Define attributes of rectangle object.
@@ -19,6 +23,10 @@ class Rectangle(base.Base):
         Returns:
             None
         """
+        handle_exception(width, "width", 1)
+        handle_exception(height, "height", 1)
+        handle_exception(x, "x", 0)
+        handle_exception(y, "y", 0)
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -85,6 +93,7 @@ class Rectangle(base.Base):
         Returns:
             None
         """
+        handle_exception(value, "width", 1)
         self.__width = value
         return None
 
@@ -99,6 +108,7 @@ class Rectangle(base.Base):
         Returns:
             None
         """
+        handle_exception(value, "height", 1)
         self.__height = value
         return None
 
@@ -113,6 +123,7 @@ class Rectangle(base.Base):
         Returns:
             None
         """
+        handle_exception(value, "x", 0)
         self.__x = value
         return None
 
@@ -127,5 +138,35 @@ class Rectangle(base.Base):
         Returns:
             None
         """
+        handle_exception(value, "y", 0)
         self.__y = value
         return None
+    pass
+
+
+def handle_exception(value, attrib, can_be):
+    """Respond according to predefined conventions
+
+    This function will test @value against predefined conventions and raise
+    exceptions according to those conventions being satisfied or not
+
+    Args:
+        value (int): Value to be examined
+        attrib (str): Private instance attribute with value @value
+
+    Returns:
+        None
+
+    Raises:
+        TypeError: @value is not an integer
+        ValueError: @value is either less than or equal to zero
+    """
+    if isinstance(value, int):
+        if value < 0 and can_be == 0:
+            raise ValueError("{} must be >= 0".format(attrib))
+        elif value <= 0 and can_be == 1:
+            raise ValueError("{} must be > 0".format(attrib))
+        else:
+            return None
+    else:
+        raise TypeError("{} must be an integer".format(attrib))
