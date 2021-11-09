@@ -36,7 +36,7 @@ class Rectangle(base.Base):
 
     @property
     def width(self):
-        """Return width of square.
+        """Return width of rectangle.
 
         Args:
             self (object): Refers to object instantiated
@@ -48,7 +48,7 @@ class Rectangle(base.Base):
 
     @property
     def height(self):
-        """Return height of square.
+        """Return height of rectangle.
 
         Args:
             self (object): Refers to object instantiated
@@ -60,7 +60,7 @@ class Rectangle(base.Base):
 
     @property
     def x(self):
-        """Return x coordinate of square.
+        """Return x coordinate of rectangle.
 
         Args:
             self (object): Refers to object instantiated
