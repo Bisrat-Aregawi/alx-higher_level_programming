@@ -34,17 +34,6 @@ class Rectangle(base.Base):
         self.__y = y
         return None
 
-    def area(self):
-        """Returns the area value of rectangle object
-
-        Args:
-            self (object): Refers to object instantiated
-
-        Returns:
-            Area of rectangle object
-        """
-        return self.__width * self.__height
-
     @property
     def width(self):
         """Return width of square.
@@ -152,6 +141,32 @@ class Rectangle(base.Base):
         handle_exception(value, "y", 0)
         self.__y = value
         return None
+
+    def area(self):
+        """Return the area value of rectangle object
+
+        Args:
+            self (object): Refers to object instantiated
+
+        Returns:
+            Area of rectangle object
+        """
+        return self.__width * self.__height
+
+    def display(self):
+        """Display the rectangle object with a # character.
+
+        Draws rectangle with hashtag character '#' to the terminal according to
+        the values provided to 'width' and 'height' attrubutes
+
+        Args:
+            self (object): Refers to object instantiated
+
+        Returns:
+            None
+        """
+        for i in range(self.__height):
+            print("#" * self.__width)
     pass
 
 
