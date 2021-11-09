@@ -185,7 +185,7 @@ class Rectangle(base.Base):
 
         return string
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update attributes of Rectangle object.
 
         Args:
@@ -199,18 +199,31 @@ class Rectangle(base.Base):
             None
         """
         arg_position = 0
-        for elem in args:
-            if arg_position == 0:
-                self.id = elem
-            elif arg_position == 1:
-                self.width = elem
-            elif arg_position == 2:
-                self.height = elem
-            elif arg_position == 3:
-                self.x = elem
-            elif arg_position == 4:
-                self.y = elem
-            arg_position = arg_position + 1
+        if len(args) != 0:
+            for elem in args:
+                if arg_position == 0:
+                    self.id = elem
+                elif arg_position == 1:
+                    self.width = elem
+                elif arg_position == 2:
+                    self.height = elem
+                elif arg_position == 3:
+                    self.x = elem
+                elif arg_position == 4:
+                    self.y = elem
+                arg_position = arg_position + 1
+        else:
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
         return None
 
     pass
