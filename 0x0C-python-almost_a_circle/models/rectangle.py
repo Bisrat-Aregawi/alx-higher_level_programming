@@ -84,7 +84,7 @@ class Rectangle(base.Base):
 
     @width.setter
     def width(self, value):
-        """Set the width according to passed 'value'
+        """Set the width according to passed 'value'.
 
         Args:
             self (object): Refers to object instantiated
@@ -99,7 +99,7 @@ class Rectangle(base.Base):
 
     @height.setter
     def height(self, value):
-        """Set the height according to passed 'value'
+        """Set the height according to passed 'value'.
 
         Args:
             self (object): Refers to object instantiated
@@ -114,7 +114,7 @@ class Rectangle(base.Base):
 
     @x.setter
     def x(self, value):
-        """Set the x coordinate according to passed 'value'
+        """Set the x coordinate according to passed 'value'.
 
         Args:
             self (object): Refers to object instantiated
@@ -129,7 +129,7 @@ class Rectangle(base.Base):
 
     @y.setter
     def y(self, value):
-        """Set the y coordinate according to passed 'value'
+        """Set the y coordinate according to passed 'value'.
 
         Args:
             self (object): Refers to object instantiated
@@ -143,7 +143,7 @@ class Rectangle(base.Base):
         return None
 
     def area(self):
-        """Return the area value of rectangle object
+        """Return the area value of rectangle object.
 
         Args:
             self (object): Refers to object instantiated
@@ -172,7 +172,7 @@ class Rectangle(base.Base):
         return None
 
     def __str__(self):
-        """Display object representing string
+        """Display object representing string.
 
         Args:
             self (object): Refers to object instantiated
@@ -184,11 +184,40 @@ class Rectangle(base.Base):
         string += f" - {self.__width}/{self.__height}"
 
         return string
+
+    def update(self, *args):
+        """Update attributes of Rectangle object.
+
+        Args:
+            First element of @args is 'id'
+            Second element of @args is 'width'
+            Third element of @args is 'height'
+            Fourth element of @args is 'x'
+            Fifth element of @args is 'y'
+
+        Returns:
+            None
+        """
+        arg_position = 0
+        for elem in args:
+            if arg_position == 0:
+                self.id = elem
+            elif arg_position == 1:
+                self.width = elem
+            elif arg_position == 2:
+                self.height = elem
+            elif arg_position == 3:
+                self.x = elem
+            elif arg_position == 4:
+                self.y = elem
+            arg_position = arg_position + 1
+        return None
+
     pass
 
 
 def handle_exception(value, attrib, can_be):
-    """Respond according to predefined conventions
+    """Respond according to predefined conventions.
 
     This function will test @value against predefined conventions and raise
     exceptions according to those conventions being satisfied or not
