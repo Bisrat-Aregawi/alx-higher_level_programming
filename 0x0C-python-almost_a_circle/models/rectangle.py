@@ -167,6 +167,21 @@ class Rectangle(base.Base):
         """
         for i in range(self.__height):
             print("#" * self.__width)
+        return None
+
+    def __str__(self):
+        """Display object representing string
+
+        Args:
+            self (object): Refers to object instantiated
+
+        Returns:
+            String representation of rectangle object
+        """
+        string = f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
+        string += f" - {self.__width}/{self.__height}"
+
+        return string
     pass
 
 
