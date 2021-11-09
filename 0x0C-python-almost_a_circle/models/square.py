@@ -61,6 +61,20 @@ class Square(rectangle.Rectangle):
         """
         return super().y
 
+    @size.setter
+    def size(self, value):
+        """Sets the @width and @height attribs to @value
+
+        Args:
+            self (object): Refers to object instantiated
+            value (int): value to set @width & @height
+
+        Returns:
+            None
+        """
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """Display object representing string.
 
@@ -70,7 +84,7 @@ class Square(rectangle.Rectangle):
         Returns:
             String representation of square object
         """
-        string = f"[Square] ({self.id}) {self.x}/{self.y}"
-        string += f" - {self.size}"
+        string = "[Square] ({}) {}/{}".format(self.id, self.x, self.y)
+        string += " - {}".format(self.size)
 
         return string

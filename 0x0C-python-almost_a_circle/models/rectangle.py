@@ -180,8 +180,8 @@ class Rectangle(base.Base):
         Returns:
             String representation of rectangle object
         """
-        string = f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
-        string += f" - {self.__width}/{self.__height}"
+        string = "[Rectangle] ({}) {}/{}".format(self.id, self.__x, self.__y)
+        string += " - {}/{}".format(self.__width, self.__height)
 
         return string
 
