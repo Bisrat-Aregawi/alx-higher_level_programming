@@ -58,5 +58,20 @@ class Base:
                 j_list.append(obj.to_dictionary())
         with open("{}.json".format(cls.__name__), "w") as file:
             file.write(cls.to_json_string(j_list))
+        return None
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Create a list object from passed string.
+
+        Args:
+            json_string (str): String representing list of dictionaries
+
+        Returns:
+            List of JSON string representation @json_string
+        """
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
 
     pass
