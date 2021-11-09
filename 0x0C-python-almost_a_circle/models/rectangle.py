@@ -226,6 +226,22 @@ class Rectangle(base.Base):
                     self.y = v
         return None
 
+    def to_dictionary(self):
+        """Converts object to a dictionary object.
+
+        Args:
+            self (object): Refers to object instantiated
+
+        Returns:
+            Dictionary representation of rectangle object.
+        """
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
     pass
 
 
