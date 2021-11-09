@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module Defines 'Base' class."""
+import json
 
 
 class Base:
@@ -21,6 +22,22 @@ class Base:
         else:
             Base.__nb_objects = Base.__nb_objects + 1
             self.id = Base.__nb_objects
-
         return None
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Static class method to serialize iterable objects.
+
+        Returns a serialized string from @list_dictionaries object by using the
+        json module.
+
+        Args:
+            list_dictionaries (list): A list of dictionary objects.
+
+        Returns:
+            None
+        """
+        if list_dictionaries == [] or list_dictionaries is None:
+            return "[]"
+        return json.dumps(list_dictionaries)
     pass
