@@ -101,4 +101,21 @@ class Square(rectangle.Rectangle):
                 elif k == "y":
                     self.y = v
         return None
+
+    def to_dictionary(self):
+        """Converts object to dictionary object.
+
+        Args:
+            self (object): Refers to object instantiated
+
+        Returns:
+            Dictionary representation of 'Square' object.
+        """
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
+
     pass

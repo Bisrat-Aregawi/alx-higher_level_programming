@@ -233,7 +233,7 @@ class Rectangle(base.Base):
             self (object): Refers to object instantiated
 
         Returns:
-            Dictionary representation of rectangle object.
+            Dictionary representation of 'Rectangle' object.
         """
         return {
             "id": self.id,
