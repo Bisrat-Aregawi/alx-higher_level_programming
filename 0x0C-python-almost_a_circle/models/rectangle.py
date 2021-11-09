@@ -34,6 +34,17 @@ class Rectangle(base.Base):
         self.__y = y
         return None
 
+    def area(self):
+        """Returns the area value of rectangle object
+
+        Args:
+            self (object): Refers to object instantiated
+
+        Returns:
+            Area of rectangle object
+        """
+        return self.__width * self.__height
+
     @property
     def width(self):
         """Return width of square.
