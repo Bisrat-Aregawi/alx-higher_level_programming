@@ -10,3 +10,4 @@ my_file_0.txt
 my_first_file.txt
 *.json
 100-test_lists.py
+*-data.js
