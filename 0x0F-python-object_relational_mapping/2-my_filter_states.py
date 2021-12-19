@@ -17,10 +17,11 @@ if __name__ == "__main__":
                          database=argv[3])
 
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{:s}'".format(argv[4])
-    query += " ORDER BY states.id ASC"
+    query = "SELECT * FROM states WHERE name = '{:s}'\
+        ORDER BY states.id ASC".format(argv[4])
     cur.execute(query)
 
     list = cur.fetchall()
     for idx in range(len(list)):
-        print(list[idx])
+        if list[idx][1] == argv[4]:
+            print(list[idx])
