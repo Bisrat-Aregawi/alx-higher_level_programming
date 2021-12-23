@@ -15,3 +15,4 @@ my_first_file.txt
 4-cities_by_state.sql
 6-model_state.py
 100-relationship_states_cities.sql
+101-relationship_states_cities_list.sql
