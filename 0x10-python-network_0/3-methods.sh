@@ -1,3 +1,3 @@
 #!/bin/bash
 # Show accepted methods of a server
-curl -s -I -X OPTIONS "$1" | grep Allow: | cut -d ':' -f 2
+curl -sI "$1" | grep "Allow:" | sed -ne 's/^Allow: //p'
