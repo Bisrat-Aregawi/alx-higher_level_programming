@@ -4,8 +4,7 @@ $(document).ready(() => {
     if ($(this).hasClass('green')) {
       $(this).removeClass('green');
       $(this).addClass('red');
-    }
-    else {
+    } else {
       $(this).removeClass('red');
       $(this).addClass('green');
     }
